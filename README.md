@@ -1,65 +1,65 @@
-# 🎌 AnimeTrackerFX
+# AnimeTrackerFX
 
 Desktop application built with JavaFX that displays seasonal anime data from MyAnimeList.
 
 ---
 
-## 📌 Overview
+## Overview
 
-AnimeTrackerFX is a JavaFX-based desktop application that fetches anime data from MyAnimeList using web scraping (JSoup) and displays it in a dynamic table.
+AnimeTrackerFX is a simple JavaFX application that retrieves anime data from MyAnimeList using web scraping (JSoup) and displays it in a table.
 
-The application allows users to browse, sort, and search anime efficiently.
-
----
-
-## 🚀 Features
-
-* 📡 Fetches anime data from MyAnimeList
-* 📊 Displays data in JavaFX TableView
-* 🔍 Real-time search/filter
-* 🔽 Column sorting (click on headers)
-* ⚠️ Error handling (network / HTTP)
-* 📝 Logging with Log4j
+The application allows browsing, sorting and filtering anime entries.
 
 ---
 
-## 📸 Screenshots
+## Features
 
-### 🔹 Main View (Default Data)
+- fetching anime data from MyAnimeList
+- displaying data using JavaFX TableView
+- search and filtering
+- column sorting
+- basic error handling (network / HTTP)
+- logging using Log4j
+
+---
+
+## Screenshots
+
+### Main view
 
 ![Main View](images/main-view.png)
 
-Displays anime data exactly as fetched from MyAnimeList.
+Data displayed as retrieved from MyAnimeList.
 
 ---
 
-### 🔹 Sorting (Alphabetical Order)
+### Sorting
 
 ![Sorting](images/sorting.png)
 
-Users can sort data by clicking on column headers (e.g., Title).
+Sorting is done by clicking on column headers.
 
 ---
 
-### 🔹 Search (Filtering Results)
+### Search
 
 ![Search](images/search.png)
 
-Real-time filtering of anime list using search input.
+Filtering results using search input.
 
 ---
 
-## 🛠 Technologies
+## Technologies
 
-* Java 17 (LTS)
-* JavaFX
-* Maven
-* JSoup (HTML parsing)
-* Log4j (logging)
+- Java 17
+- JavaFX
+- Maven
+- JSoup
+- Log4j
 
 ---
 
-## 📂 Project Structure
+## Project structure
 
 ```
 src/
@@ -76,67 +76,49 @@ src/
 
 ---
 
-## ⚙️ How It Works
+## How it works
 
-1. JSoup connects to MyAnimeList website
-2. HTML is parsed into Java objects (`DataObject`)
-3. Data is displayed in a JavaFX `TableView`
-4. User can search and filter results dynamically
+1. JSoup connects to MyAnimeList
+2. HTML is parsed into objects (`DataObject`)
+3. Data is displayed in a TableView
+4. User can filter results in real time
 
 ---
 
-## 🔗 Seasonal Data Source
+## Data source
 
-The application currently uses a fixed MyAnimeList seasonal URL:
-
-```
-Document doc = Jsoup.connect("https://myanimelist.net/anime/season/2023/spring")
-        .timeout(6000)
-        .get();
-```
-
-By modifying the URL, it is possible to fetch anime data from different years and seasons.
-
-### 📌 URL Format
+The application currently uses a fixed seasonal URL:
 
 ```
-https://myanimelist.net/anime/season/{year}/{season}
+https://myanimelist.net/anime/season/2023/spring
 ```
 
-### 📅 Available Seasons
+Changing the URL allows retrieving data for different years and seasons.
 
-* winter
-* spring
-* summer
-* fall
+Available seasons:
 
-### ✅ Example URLs
+- winter
+- spring
+- summer
+- fall
+
+Example:
 
 ```
 https://myanimelist.net/anime/season/2024/winter
-https://myanimelist.net/anime/season/2022/summer
-https://myanimelist.net/anime/season/2021/fall
-```
-
-Currently, changing the season requires modifying the URL directly in the source code.
-
----
-
-## 🚀 How to Run
-
-### Option 1 – IntelliJ IDEA
-
-1. Open project as Maven project
-2. Set Project SDK → Java 17
-3. Run:
-
-```
-HelloApplication
 ```
 
 ---
 
-### Option 2 – Maven
+## Run
+
+### IntelliJ
+
+- open project as Maven
+- set Java 17
+- run `HelloApplication`
+
+### Maven
 
 ```
 ./mvnw clean compile
@@ -145,26 +127,26 @@ HelloApplication
 
 ---
 
-## ⚠️ Notes
+## Notes
 
-* Requires internet connection
-* Web scraping depends on page structure (may break if website changes)
-* JavaFX may require VM options depending on setup
-
----
-
-## 🔮 Future Improvements
-
-* Dynamic season and year selection (without modifying source code)
-* GUI controls for selecting anime season
-* Open anime link in browser
-* Async data loading (non-blocking UI)
-* Data caching
-* Export to CSV
+- requires internet connection
+- depends on website structure (scraping may break)
+- JavaFX setup may require VM options
 
 ---
 
-## 👤 Author
+## Future improvements
+
+- dynamic season and year selection
+- GUI controls for choosing season
+- opening anime links in browser
+- asynchronous data loading
+- data caching
+- export to CSV
+
+---
+
+## Author
 
 Hubert Jabłoński
 
